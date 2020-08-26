@@ -1,0 +1,40 @@
+{
+	"name": "f3",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Flip a card written by Five Fingers",
+	"author": "yoshixmk",
+	"main": "index.js",
+	"scripts": {
+		"build": "vite build",
+		"clean": "rimraf dist",
+		"compile": "tsc",
+		"dev": "vite",
+		"lint": "rome check",
+		"lint-fix": "rome check --apply",
+		"s-build": "yarn clean && yarn compile",
+		"s-dev": "ts-node src/server/index.ts",
+		"s-start": "node dist/server/index.js",
+		"s-watch": "ts-node-dev --respawn src/server/index.ts"
+	},
+	"dependencies": {
+		"axios": "^0.20.0",
+		"express": "^4.17.1",
+		"vue": "^3.0.0-rc.8"
+	},
+	"devDependencies": {
+		"@types/node": "^14.6.0",
+		"@vue/compiler-sfc": "^3.0.0-rc.8",
+		"rimraf": "^3.0.2",
+		"rome": "^10.0.4-beta",
+		"ts-node": "^9.0.0",
+		"ts-node-dev": "^1.0.0-pre.61",
+		"typescript": "^4.0.2",
+		"vite": "^1.0.0-rc.4"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yoshixmk/f3"
+	}
+}

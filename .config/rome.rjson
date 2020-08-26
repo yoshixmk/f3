@@ -1,0 +1,11 @@
+// For configuration documentation see http://romefrontend.dev/#project-configuration
+name: "f3"
+root: true
+lint: {
+	globals: []
+	ignore: [
+		"tsconfig.json"
+		".vscode/"
+		".idea/"
+]
+}

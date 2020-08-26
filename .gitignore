@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules
+
+dist
+*.local
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables file
+.env
+
+# macOS
+.DS_Store
