@@ -9,11 +9,7 @@
 </template>
 
 <script>
-import * as dotenv from 'dotenv';
 import axios from "axios";
-
-dotenv.config();
-const url = process.env.BASE_URL
 
 export default {
   name: "HelloWorld",
@@ -28,7 +24,7 @@ export default {
   },
   mounted() {
     axios
-      .get(url)
+      .get(import.meta.env.VITE_BASE_URL)
       .then((response) => (this.info = response.data));
   },
 };
