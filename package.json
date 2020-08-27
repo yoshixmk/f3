@@ -6,16 +6,19 @@
 	"author": "yoshixmk",
 	"main": "index.js",
 	"scripts": {
-		"build": "vite build",
+		"build": "yarn clean && concurrently 'npm:build:*'",
+		"build:client": "vite build",
+		"build:server": "yarn compile",
 		"clean": "rimraf dist",
 		"compile": "tsc",
-		"dev": "vite",
+		"dev": "concurrently 'npm:dev:*'",
+		"dev:client": "vite",
+		"dev:server": "ts-node-dev --respawn src/server/index.ts",
 		"lint": "rome check",
 		"lint-fix": "rome check --apply",
-		"s-build": "yarn clean && yarn compile",
-		"s-dev": "ts-node src/server/index.ts",
-		"s-start": "node dist/server/index.js",
-		"s-watch": "ts-node-dev --respawn src/server/index.ts"
+		"start": "concurrently 'npm:start:*'",
+		"start:client": "vite serve",
+		"start:server": "node dist/server/index.js"
 	},
 	"dependencies": {
 		"axios": "^0.20.0",
@@ -25,6 +28,7 @@
 	"devDependencies": {
 		"@types/node": "^14.6.0",
 		"@vue/compiler-sfc": "^3.0.0-rc.8",
+		"concurrently": "^5.3.0",
 		"rimraf": "^3.0.2",
 		"rome": "^10.0.4-beta",
 		"ts-node": "^9.0.0",

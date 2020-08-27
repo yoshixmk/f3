@@ -17,7 +17,6 @@ $ yarn format
 - Formatting
 - Linting
 - package.json validation
-- Typescript based
 
 ## Philosophy
 - [Vue 3](https://github.com/vuejs/vue-next)

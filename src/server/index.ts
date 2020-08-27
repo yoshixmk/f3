@@ -12,12 +12,41 @@ app.get(
     return res.send('Hello world.')
   });
 
-const url = process.env.PORT;
+/* Fingers */
+let fingersStore: Map<string, number> = new Map();
 
+app.post(
+  '/fingers',
+  (req: Express.Request, res: Express.Response) => {
+    const name: string = req.param("name", "anonymous");
+    const value: number = Number(req.param("value", 3));
+    fingersStore.set(name, value)
+    res.set({ 'Access-Control-Allow-Origin': '*' });
+    res.status(201).send('Success');
+  });
+
+app.get(
+  '/fingers',
+  (_req: Express.Request, res: Express.Response) => {
+    res.set({ 'Access-Control-Allow-Origin': '*' });
+    res.header('Content-Type', 'application/json; charset=utf-8');
+    return res.send([...fingersStore]);
+  });
+
+/* Reset */
+app.post('/reset', (_req: Express.Request, res: Express.Response) => {
+  res.set({ 'Access-Control-Allow-Origin': '*' });
+  res.header('Content-Type', 'application/json; charset=utf-8');
+  fingersStore.clear();
+  res.status(201).send({ result: "ok" });
+});
+
+/* Listen */
+const port = process.env.PORT;
 app.listen(
-  url,
+  port,
   () => {
-    console.log(`Example app listening on ${url}!`);
+    console.log(`Example app listening on ${port}!`);
   });
 
 export default app;
