@@ -1,10 +1,8 @@
 <template>
   <h1>{{ msg }}</h1>
-  <button @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <img alt="Vue logo" height="300" :src="`/images/finger${fingerNumber}.png`" />
+  <br />
+  <button @click="count++">count is: {{ fingerNumber }}</button>
   <p>From server: {{ info }}</p>
 </template>
 
@@ -12,7 +10,7 @@
 import axios from "axios";
 
 export default {
-  name: "HelloWorld",
+  name: "Vote",
   props: {
     msg: String,
   },
@@ -21,6 +19,11 @@ export default {
       count: 0,
       info: null,
     };
+  },
+  computed: {
+    fingerNumber() {
+      return (this.count % 5) + 1;
+    },
   },
   mounted() {
     axios
