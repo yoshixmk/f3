@@ -1,8 +1,11 @@
 <template>
   <h1>{{ msg }}</h1>
-  <img alt="Vue logo" height="300" :src="`/images/finger${fingerNumber}.png`" />
+  <img alt="Finger image" height="300" :src="`/images/finger${fingerNumber()}.png`" />
   <br />
-  <button @click="count++">count is: {{ fingerNumber }}</button>
+  <p>My name is <b>{{ name }}.</b></p>
+  <input v-model="name" autofocus />
+  <button @click="count++">count is: {{ fingerNumber() }}</button>
+  <button @click="sendVote">Send</button>
   <p>From server: {{ info }}</p>
 </template>
 
@@ -17,18 +20,31 @@ export default {
   data() {
     return {
       count: 0,
+      name: "",
       info: null,
     };
-  },
-  computed: {
-    fingerNumber() {
-      return (this.count % 5) + 1;
-    },
   },
   mounted() {
     axios
       .get(import.meta.env.VITE_BASE_URL)
       .then((response) => (this.info = response.data));
+
+    // setInterval(() => {
+    //   updateFingersInfo()
+    // }, 1000)
+  },
+  methods: {
+    fingerNumber() {
+      return (this.count % 5) + 1;
+    },
+    sendVote() {
+      axios
+        .post(import.meta.env.VITE_BASE_URL + "/fingers", {
+          "name": this.name,
+          "value": this.fingerNumber(),
+        })
+        .then((response) => (this.info = response.data));
+    },
   },
 };
 </script>

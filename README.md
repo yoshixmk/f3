@@ -26,7 +26,3 @@ $ yarn format
   - [en](https://www.amazon.co.jp/Node-Js-Design-Patterns-Mario-Casciaro/dp/1785885588)
   - [ja](https://www.oreilly.co.jp/books/9784873118734/)
 - using Firebase
-
-# References
-- [remote-five-finger](https://github.com/kamehiro17/remote-five-finger)
-  - brings the images

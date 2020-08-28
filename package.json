@@ -21,7 +21,9 @@
 		"start:server": "node dist/server/index.js"
 	},
 	"dependencies": {
+		"@types/cors": "^2.8.7",
 		"axios": "^0.20.0",
+		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"vue": "^3.0.0-rc.8"
 	},

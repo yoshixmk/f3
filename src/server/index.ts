@@ -1,10 +1,14 @@
 import * as dotenv from 'dotenv';
 import Express from 'express';
-import { Finger, Fingers } from '../domains/fingers'
+import { Finger, Fingers } from '../domains/fingers';
+import cors from 'cors';
 
 dotenv.config();
 
 const app = Express();
+app.use(cors({ origin: true }));
+app.use(Express.json())
+app.use(Express.urlencoded({ extended: true }));
 
 app.get(
   '/',
@@ -19,9 +23,8 @@ let fingersStore: Map<string, Finger> = new Map();
 app.post(
   '/fingers',
   (req: Express.Request, res: Express.Response) => {
-    const name: string = req.param("name", "anonymous");
-    const value: number = Number(req.param("value", 3));
-    fingersStore.set(name, { name, value })
+    const { name, value } = req.body as Finger;
+    fingersStore.set(name, { name, value });
     res.set({ 'Access-Control-Allow-Origin': '*' });
     res.status(201).send('Success');
   });
