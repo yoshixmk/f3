@@ -6,7 +6,7 @@
   <input v-model="name" autofocus />
   <button @click="count++">count is: {{ fingerNumber() }}</button>
   <button @click="sendVote">Send</button>
-  <p>From server: {{ info }}</p>
+  <p v-if="info">From server: {{ info }}</p>
 </template>
 
 <script>
@@ -22,16 +22,8 @@ export default {
       count: 0,
       name: "",
       info: null,
+      users: null
     };
-  },
-  mounted() {
-    axios
-      .get(import.meta.env.VITE_BASE_URL)
-      .then((response) => (this.info = response.data));
-
-    // setInterval(() => {
-    //   updateFingersInfo()
-    // }, 1000)
   },
   methods: {
     fingerNumber() {
