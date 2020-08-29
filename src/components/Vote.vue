@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 class="text-info">{{ msg }}</h1>
   <img alt="Finger image" height="300" :src="`/images/finger${fingerNumber()}.png`" />
   <br />
   <h2>My name is <b>{{ name }}.</b></h2>
