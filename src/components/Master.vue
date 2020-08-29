@@ -1,12 +1,15 @@
 <template>
-  <UserInfo :users="users" />
+  <user-info :users="users" />
   <button class="btn btn-primary" @click="updateData()">IT'S SHOWTIME !!</button>
   <div v-show="isShowTime" id="chart" />
+  <br />
+  <reset-button />
 </template>
 
 <script>
 import axios from "axios";
 import UserInfo from "./UserInfo.vue";
+import ResetButton from "./ResetButton.vue";
 import ApexCharts from "apexcharts";
 
 export default {
@@ -21,6 +24,7 @@ export default {
   },
   components: {
     UserInfo,
+    ResetButton,
   },
   props: ["users"],
   data() {

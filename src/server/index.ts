@@ -36,10 +36,10 @@ app.get(
   });
 
 /* Reset */
-app.post('/reset', (_req: Express.Request, res: Express.Response) => {
+app.delete('/reset', (_req: Express.Request, res: Express.Response) => {
   res.header('Content-Type', 'application/json; charset=utf-8');
   fingersStore.clear();
-  res.status(201).send({ result: "ok" });
+  res.status(204).send();
 });
 
 /* Listen */

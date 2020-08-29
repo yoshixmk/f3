@@ -2,10 +2,26 @@
   <h1 class="text-info">{{ msg }}</h1>
   <img alt="Finger image" height="300" :src="`/images/finger${fingerNumber()}.png`" />
   <br />
-  <h2>My name is <b>{{ name }}.</b></h2>
-  <input v-model="name" autofocus />
-  <button @click="count++">count is: {{ fingerNumber() }}</button>
-  <button @click="sendVote">Send</button>
+  <h2>
+    My name is
+    <b>{{ name }}.</b>
+  </h2>
+  <div class="container">
+    <div class="row container-sm">
+      <div class="col-0 col-lg-3" />
+      <input class="col-7 col-lg-4 m-1" v-model="name" autofocus placeholder="Your name" />
+      <button
+        @click="count++"
+        class="btn btn-outline-secondary col-2 col-lg-1 m-1"
+      >Vote: {{ fingerNumber() }}</button>
+      <button
+        @click="sendVote"
+        class="btn btn-outline-primary col-2 col-lg-1 m-1"
+        :disabled="hasNotName"
+      >Send</button>
+      <div class="col-0 col-lg-1" />
+    </div>
+  </div>
   <p v-if="info" class="text-primary">{{ info }}</p>
 </template>
 
@@ -22,8 +38,13 @@ export default {
       count: 0,
       name: "",
       info: null,
-      users: null
+      users: null,
     };
+  },
+  computed: {
+    hasNotName() {
+      return /^\s*$/g.test(this.name);
+    },
   },
   methods: {
     fingerNumber() {
@@ -32,8 +53,8 @@ export default {
     sendVote() {
       axios
         .post(import.meta.env.VITE_BASE_URL + "/fingers", {
-          "name": this.name,
-          "value": this.fingerNumber(),
+          name: this.name,
+          value: this.fingerNumber(),
         })
         .then((response) => (this.info = response.data));
     },
