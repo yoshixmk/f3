@@ -23,8 +23,10 @@
 	"dependencies": {
 		"@types/cors": "^2.8.7",
 		"axios": "^0.20.0",
+		"bootstrap": "^5.0.0-alpha1",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
+		"popper.js": "^1.16.1",
 		"vue": "^3.0.0-rc.8"
 	},
 	"devDependencies": {

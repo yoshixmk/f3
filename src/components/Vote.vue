@@ -2,11 +2,11 @@
   <h1>{{ msg }}</h1>
   <img alt="Finger image" height="300" :src="`/images/finger${fingerNumber()}.png`" />
   <br />
-  <p>My name is <b>{{ name }}.</b></p>
+  <h2>My name is <b>{{ name }}.</b></h2>
   <input v-model="name" autofocus />
   <button @click="count++">count is: {{ fingerNumber() }}</button>
   <button @click="sendVote">Send</button>
-  <p v-if="info">From server: {{ info }}</p>
+  <p v-if="info" class="text-primary">{{ info }}</p>
 </template>
 
 <script>

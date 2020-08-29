@@ -1,5 +1,5 @@
 <template>
-  <p>Voted user: {{ userNames }}</p>
+  <h3 class="mb-0 p-4">Voted user: {{ userNames }}</h3>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 import { h, createApp } from 'vue'
 import VoteApp from './VoteApp.vue'
 import MasterApp from './MasterApp.vue'
-import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NotFoundComponent = { template: '<p>Page not found</p>' }
 

@@ -1,7 +1,9 @@
 <template>
   <UserInfo :users="users" />
-  <button @click="isShowTime = !isShowTime">IT'S SHOWTIME !!</button>
-  <p  v-if="isShowTime"><b>Result</b></p>
+  <button class="btn btn-primary" @click="isShowTime = !isShowTime">IT'S SHOWTIME !!</button>
+  <p v-if="isShowTime">
+    <b>Result</b>
+  </p>
 </template>
 
 <script>
@@ -13,13 +15,11 @@ export default {
   components: {
     UserInfo,
   },
-  props: ['users'],
+  props: ["users"],
   data() {
     return {
       isShowTime: false,
     };
   },
-  // computed: {
-  // }
 };
 </script>
