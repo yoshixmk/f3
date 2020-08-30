@@ -10,11 +10,11 @@
       <div class="col-0 col-lg-3" />
       <input class="col-7 col-lg-4 m-1" v-model="name" autofocus placeholder="Your name" />
       <button
-        @click="count++"
-        v-on:keyup.right="count++"
-        v-on:keyup.up="count++"
-        v-on:keyup.left="count--"
-        v-on:keyup.down="count--"
+        @click="countUp()"
+        v-on:keyup.right="countUp()"
+        v-on:keyup.up="countUp()"
+        v-on:keyup.left="countDown()"
+        v-on:keyup.down="countDown()"
         v-on:keyup.1="initCount(1)"
         v-on:keyup.2="initCount(2)"
         v-on:keyup.3="initCount(3)"
@@ -65,6 +65,16 @@ export default {
     },
     initCount(num) {
       this.count = num - 1;
+    },
+    countUp() {
+      this.count++;
+    },
+    countDown() {
+      if (this.count <= 0) {
+        this.count = 4;
+        return;
+      }
+      this.count--;
     },
   },
 };
