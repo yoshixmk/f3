@@ -11,6 +11,15 @@
       <input class="col-7 col-lg-4 m-1" v-model="name" autofocus placeholder="Your name" />
       <button
         @click="count++"
+        v-on:keyup.right="count++"
+        v-on:keyup.up="count++"
+        v-on:keyup.left="count--"
+        v-on:keyup.down="count--"
+        v-on:keyup.1="initCount(1)"
+        v-on:keyup.2="initCount(2)"
+        v-on:keyup.3="initCount(3)"
+        v-on:keyup.4="initCount(4)"
+        v-on:keyup.5="initCount(5)"
         class="btn btn-outline-secondary col-2 col-lg-1 m-1"
       >Vote: {{ fingerNumber() }}</button>
       <button
@@ -53,6 +62,9 @@ export default {
           value: this.fingerNumber(),
         })
         .then((response) => (this.info = response.data));
+    },
+    initCount(num) {
+      this.count = num - 1;
     },
   },
 };
