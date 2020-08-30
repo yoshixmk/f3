@@ -1,5 +1,5 @@
 # f3:point_up::v::raised_hand:
-Facilitating conversations using First to Five. Recommended for use in online agile meeting:black_joker:
+Facilitating conversations using Fist to Five. Recommended for use in online agile meeting:black_joker:
 
 ## Getting Started:rocket:
 

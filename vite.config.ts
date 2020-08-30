@@ -1,7 +1,8 @@
 export default {
   proxy: {
     '/api': {
-      target: `http://localhost:${process.env.PORT}`,
+      // if use this proxy, port must be the same to '.env' setting
+      target: `http://localhost:5000`,
       changeOrigin: true,
       rewrite: path => path.replace(/^\/api/, '')
     }

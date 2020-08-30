@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img src="/images/finger5.png" class="bg-white" width="30" height="30" alt="" loading="lazy">
-        First to Five / <span class="text-info">{{ msg }}</span>
+        Fist to Five / <span class="text-info">{{ msg }}</span>
       </a>
       <button
         class="navbar-toggler"
