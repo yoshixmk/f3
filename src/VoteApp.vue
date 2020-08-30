@@ -1,7 +1,7 @@
 <template>
   <Navbar msg="Vote" />
   <Vote />
-  <user-info :users="users" />
+  <user-info :fingers="fingers" />
 </template>
 
 <script lang="ts">
@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      users: [],
+      fingers: [],
     };
   },
   mounted() {
@@ -31,7 +31,7 @@ export default {
     updateFingersInfo() {
       axios
         .get(import.meta.env.VITE_BASE_URL + "/fingers")
-        .then((response) => (this.users = response.data));
+        .then((response) => (this.fingers = response.data));
     },
   },
 };

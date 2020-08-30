@@ -31,7 +31,6 @@
       <div class="col-0 col-lg-1" />
     </div>
   </div>
-  <p v-if="info" class="text-primary">{{ info }}</p>
 </template>
 
 <script lang="ts">
@@ -44,7 +43,6 @@ export default defineComponent({
     return {
       count: 0,
       name: "",
-      info: null,
       users: null,
     };
   },
@@ -64,7 +62,7 @@ export default defineComponent({
           name: this.name,
           value: this.fingerNumber(),
         })
-        .then((response) => (this.info = response.data));
+        .then((response) => (console.info(response.data)));
     },
     initCount(num: number) {
       this.count = num - 1;
