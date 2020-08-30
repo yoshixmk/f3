@@ -1,5 +1,5 @@
 <template>
-  <img alt="Finger image" height="300" :src="`/images/finger${fingerNumber()}.png`" />
+  <img :src="`/images/finger${fingerNumber()}.png`" class="pt-2" alt="Finger image" height="300" />
   <br />
   <h2>
     My name is

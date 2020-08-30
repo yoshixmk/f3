@@ -53,6 +53,7 @@ export default {
       this.chartOptions = {
         chart: {
           type: "bar",
+          height: 350,
         },
         series: [
           {
