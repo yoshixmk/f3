@@ -1,5 +1,5 @@
 # f3:point_up::v::raised_hand:
-Flip a card written by Five Fingers. Recommended for use in online agile meeting:black_joker:
+Facilitating conversations using First to Five. Recommended for use in online agile meeting:black_joker:
 
 ## Getting Started:rocket:
 
@@ -11,7 +11,7 @@ $ yarn dev
 - frontend: 3000
 - backend : 5000
 
-## Lint <img src="https://avatars0.githubusercontent.com/u/44216277?s=88&v=4" alt="rome" width=20 />
+## Lint <img src="https://avatars0.githubusercontent.com/u/44216277?s=88&v=4" alt="rome" width=25 />
 
 ```
 $ yarn format
@@ -33,3 +33,6 @@ $ yarn format
 - [Node.js design patterns](https://github.com/PacktPublishing/Node.js_Design_Patterns_Second_Edition_Code)
   - [en](https://www.amazon.co.jp/Node-Js-Design-Patterns-Mario-Casciaro/dp/1785885588)
   - [ja](https://www.oreilly.co.jp/books/9784873118734/)
+
+## [What is Fist to Five?](https://www.lucidmeetings.com/glossary/fist-five)
+> The Fist to Five is a technique for quickly getting feedback or gauging consensus during a meeting. The leader makes a statement, then asks everyone to show their level of agreement with the statement by holding up a number of fingers, from 5 for wild enthusiasm (Jazz hands!) down to a clenched fist for vehement opposition.
