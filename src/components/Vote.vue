@@ -34,10 +34,11 @@
   <p v-if="info" class="text-primary">{{ info }}</p>
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "Vote",
   data() {
     return {
@@ -49,7 +50,8 @@ export default {
   },
   computed: {
     hasNotName() {
-      return /^\s*$/g.test(this.name);
+      const target: string = this.name;
+      return /^\s*$/g.test(target);
     },
   },
   methods: {
@@ -64,7 +66,7 @@ export default {
         })
         .then((response) => (this.info = response.data));
     },
-    initCount(num) {
+    initCount(num: number) {
       this.count = num - 1;
     },
     countUp() {
@@ -78,5 +80,5 @@ export default {
       this.count--;
     },
   },
-};
+});
 </script>

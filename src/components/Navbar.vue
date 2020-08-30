@@ -28,14 +28,14 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "Navbar",
   props: {
     msg: String,
   },
   computed: {
-    isFacilitator() {
+    isFacilitator(): Boolean {
       return this.msg === "Facilitator";
     },
   },

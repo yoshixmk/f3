@@ -4,7 +4,7 @@
   <user-info :users="users" />
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios";
 import Navbar from "./components/Navbar.vue";
 import Vote from "./components/Vote.vue";

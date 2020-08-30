@@ -1,4 +1,4 @@
-export type Finger = {
+export interface Finger {
    name: string;
    value: number;
 }

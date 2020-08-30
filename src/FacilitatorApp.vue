@@ -1,16 +1,17 @@
 <template>
   <Navbar msg="Facilitator" />
   <Vote />
-  <Facilitator :users="users" />
+  <Facilitator :fingers="fingers" />
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios";
 import Navbar from "./components/Navbar.vue";
 import Vote from "./components/Vote.vue";
 import Facilitator from "./components/Facilitator.vue";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "FacilitatorApp",
   components: {
     Navbar,
@@ -19,7 +20,7 @@ export default {
   },
   data() {
     return {
-      users: [],
+      fingers: [],
     };
   },
   mounted() {
@@ -31,8 +32,8 @@ export default {
     updateFingersInfo() {
       axios
         .get(import.meta.env.VITE_BASE_URL + "/fingers")
-        .then((response) => (this.users = response.data));
+        .then((response) => (this.fingers = response.data));
     },
   },
-};
+});
 </script>

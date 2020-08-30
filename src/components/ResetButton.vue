@@ -3,8 +3,9 @@
   <button :disabled="!checked" class="btn btn-warning btn-sm m-1" @click="reset()">Reset</button>
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios";
+
 
 export default {
   name: "ResetButton",
