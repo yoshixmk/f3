@@ -20,6 +20,7 @@
         v-on:keyup.3="initCount(3)"
         v-on:keyup.4="initCount(4)"
         v-on:keyup.5="initCount(5)"
+        v-on:keyup.0="initCount(0)"
         class="btn btn-outline-secondary col-2 col-lg-1 m-1"
       >Vote: {{ fingerNumber() }}</button>
       <button
