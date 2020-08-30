@@ -1,5 +1,4 @@
 <template>
-  <h1 class="text-info">{{ msg }}</h1>
   <img alt="Finger image" height="300" :src="`/images/finger${fingerNumber()}.png`" />
   <br />
   <h2>
@@ -30,9 +29,6 @@ import axios from "axios";
 
 export default {
   name: "Vote",
-  props: {
-    msg: String,
-  },
   data() {
     return {
       count: 0,

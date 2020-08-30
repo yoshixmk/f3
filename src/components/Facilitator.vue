@@ -13,7 +13,7 @@ import ResetButton from "./ResetButton.vue";
 import ApexCharts from "apexcharts";
 
 export default {
-  name: "Master",
+  name: "Facilitator",
   mounted() {
     this.chart = new ApexCharts(
       document.querySelector("#chart"),

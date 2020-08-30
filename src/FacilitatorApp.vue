@@ -1,18 +1,21 @@
 <template>
-  <Vote msg="F3 Master Page" />
-  <Master :users="users" />
+  <Navbar msg="Facilitator" />
+  <Vote />
+  <Facilitator :users="users" />
 </template>
 
 <script>
 import axios from "axios";
+import Navbar from "./components/Navbar.vue";
 import Vote from "./components/Vote.vue";
-import Master from "./components/Master.vue";
+import Facilitator from "./components/Facilitator.vue";
 
 export default {
-  name: "MasterApp",
+  name: "FacilitatorApp",
   components: {
+    Navbar,
     Vote,
-    Master,
+    Facilitator,
   },
   data() {
     return {

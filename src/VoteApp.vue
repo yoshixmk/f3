@@ -1,16 +1,19 @@
 <template>
-  <Vote msg="F3" />
+  <Navbar msg="Vote" />
+  <Vote />
   <user-info :users="users" />
 </template>
 
 <script>
 import axios from "axios";
+import Navbar from "./components/Navbar.vue";
 import Vote from "./components/Vote.vue";
 import UserInfo from "./components/UserInfo.vue";
 
 export default {
   name: "VoteApp",
   components: {
+    Navbar,
     Vote,
     UserInfo,
   },
