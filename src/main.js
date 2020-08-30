@@ -1,6 +1,8 @@
 import { h, createApp } from 'vue'
 import VoteApp from './VoteApp.vue'
 import FacilitatorApp from './FacilitatorApp.vue'
+import 'popper.js'
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NotFoundComponent = { template: '<p>Page not found</p>' }
