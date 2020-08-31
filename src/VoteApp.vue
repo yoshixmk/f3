@@ -30,7 +30,7 @@ export default {
   methods: {
     updateFingersInfo() {
       axios
-        .get(import.meta.env.VITE_BASE_URL + "/fingers")
+        .get(import.meta.env.VITE_BASE_URL + "/v1/fingers")
         .then((response) => (this.fingers = response.data));
     },
   },

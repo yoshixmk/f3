@@ -58,7 +58,7 @@ export default defineComponent({
     },
     sendVote() {
       axios
-        .post(import.meta.env.VITE_BASE_URL + "/fingers", {
+        .post(import.meta.env.VITE_BASE_URL + "/v1/fingers", {
           name: this.name,
           value: this.fingerNumber(),
         })

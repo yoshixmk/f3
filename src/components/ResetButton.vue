@@ -17,7 +17,7 @@ export default {
   methods: {
     reset() {
       if (this.checked) {
-        axios.delete(import.meta.env.VITE_BASE_URL + "/reset");
+        axios.delete(import.meta.env.VITE_BASE_URL + "/v1/reset");
       }
     },
   },
