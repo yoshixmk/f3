@@ -12,7 +12,6 @@ import Facilitator from "./components/Facilitator.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "FacilitatorApp",
   components: {
     Navbar,
     Vote,

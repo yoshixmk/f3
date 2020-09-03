@@ -11,7 +11,6 @@ import Vote from "./components/Vote.vue";
 import UserInfo from "./components/UserInfo.vue";
 
 export default {
-  name: "VoteApp",
   components: {
     Navbar,
     Vote,

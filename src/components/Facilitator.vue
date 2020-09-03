@@ -17,7 +17,6 @@ type GroupedByUsers = {
   [key: number]: Fingers | undefined;
 };
 export default defineComponent({
-  name: "Facilitator",
   mounted() {
     this.chart = new ApexCharts(
       document.querySelector("#chart"),

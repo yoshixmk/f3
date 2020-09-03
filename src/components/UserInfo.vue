@@ -15,7 +15,6 @@ import { defineComponent, PropType } from "vue";
 import { Fingers } from "../domains/fingers";
 
 export default defineComponent({
-  name: "UserInfo",
   props: {
     fingers: {
       type: Object as PropType<Fingers | undefined>,
