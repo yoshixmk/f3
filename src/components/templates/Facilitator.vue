@@ -8,9 +8,9 @@
 
 <script lang="ts">
 import UserInfo from "./UserInfo.vue";
-import ResetButton from "./ResetButton.vue";
+import ResetButton from "../organism/ResetButton.vue";
 import ApexCharts from "apexcharts";
-import { Fingers } from "../domains/fingers";
+import { Fingers } from "../../domains/fingers";
 import { defineComponent, PropType } from "vue";
 
 type GroupedByUsers = {

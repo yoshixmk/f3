@@ -6,9 +6,9 @@
 
 <script lang="ts">
 import axios from "axios";
-import Navbar from "./components/Navbar.vue";
-import Vote from "./components/Vote.vue";
-import Facilitator from "./components/Facilitator.vue";
+import Navbar from "./components/templates/Navbar.vue";
+import Vote from "./components/templates/Vote.vue";
+import Facilitator from "./components/templates/Facilitator.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({

@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { Fingers } from "../domains/fingers";
+import { Fingers } from "../../domains/fingers";
 
 export default defineComponent({
   props: {

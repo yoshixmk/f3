@@ -43,7 +43,7 @@
 import axios from "axios";
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
-import { State } from "../store";
+import { State } from "../../store";
 
 export default defineComponent({
   setup() {
