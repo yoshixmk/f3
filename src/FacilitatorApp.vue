@@ -30,7 +30,7 @@ export default defineComponent({
   methods: {
     updateFingersInfo() {
       axios
-        .get(import.meta.env.VITE_BASE_URL + "/v1/fingers")
+        .get(process.env.API_URL + "/v1/fingers")
         .then((response) => (this.fingers = response.data));
     },
   },

@@ -9,7 +9,7 @@ RUN yarn build
 # backend port
 ENV PORT=5000
 # front end base url
-ENV VITE_BASE_URL=http://localhost:3000
+ENV API_URL=http://localhost:3000
 
 # front (proxy backend if start with '/api')
 EXPOSE 3000

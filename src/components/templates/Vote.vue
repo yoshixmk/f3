@@ -54,7 +54,7 @@ export default defineComponent({
     };
     const sendVote = () => {
       axios
-        .post(import.meta.env.VITE_BASE_URL + "/v1/fingers", {
+        .post(process.env.API_URL + "/v1/fingers", {
           name: state.name,
           value: fingerNumber(),
         })
