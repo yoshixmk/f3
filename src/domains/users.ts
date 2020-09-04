@@ -1,5 +1,5 @@
 export interface User {
-   name: string;
+	name: string;
 }
 
 export type Users = Array<User>;

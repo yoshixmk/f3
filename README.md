@@ -17,7 +17,7 @@ $ yarn dev
 ## Lint <img src="https://avatars0.githubusercontent.com/u/44216277?s=88&v=4" alt="rome" width=25 />
 
 ```
-$ yarn format
+$ yarn lint-fix
 ```
 `rome check` works internally.
 - Dependency verification
@@ -25,7 +25,8 @@ $ yarn format
 - Linting
 - package.json validation
 
-※ Not satisfied during development
+※ Not satisfied during development  
+About [this issue](https://github.com/romefrontend/rome/issues/1177).
 
 ## Philosophy ⚡
 - [Vue 3](https://github.com/vuejs/vue-next)
