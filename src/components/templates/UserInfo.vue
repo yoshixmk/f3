@@ -4,8 +4,8 @@
       v-for="(finger, i) in fingers"
       :key="{i}"
       class="badge rounded-pill bg-light text-dark ml-1 font-weight-normal"
-    >{{finger.name}}</span>
-    <br />
+    >{{ finger.name }}</span>
+    <br>
     {{ fingers.length }} voted users
   </h4>
 </template>

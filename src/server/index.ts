@@ -1,14 +1,14 @@
 import * as dotenv from "dotenv";
 import Express from "express";
-import {Finger, Fingers} from "../domains/fingers";
+import { Finger, Fingers } from "../domains/fingers";
 import cors from "cors";
 
 dotenv.config();
 
 const app = Express();
-app.use(cors({origin: true}));
+app.use(cors({ origin: true }));
 app.use(Express.json());
-app.use(Express.urlencoded({extended: true}));
+app.use(Express.urlencoded({ extended: true }));
 
 app.get(
 	"/",
@@ -18,13 +18,13 @@ app.get(
 );
 
 /* Fingers */
-let fingersStore: Map<string, Finger> = new Map();
+const fingersStore: Map<string, Finger> = new Map<string, Finger>();
 
 app.post(
 	"/fingers",
 	(req: Express.Request, res: Express.Response) => {
-		const {name, value} = (req.body as Finger);
-		fingersStore.set(name, {name, value});
+		const { name, value } = (req.body as Finger);
+		fingersStore.set(name, { name, value });
 		res.status(201).send("Success");
 	},
 );

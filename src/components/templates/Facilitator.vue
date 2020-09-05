@@ -1,8 +1,16 @@
 <template>
   <user-info :fingers="fingers" />
-  <button class="btn btn-primary" @click="updateData()">IT'S SHOWTIME !!</button>
-  <div v-show="isShowTime" id="chart" />
-  <br />
+  <button
+    class="btn btn-primary"
+    @click="updateData()"
+  >
+    IT'S SHOWTIME !!
+  </button>
+  <div
+    v-show="isShowTime"
+    id="chart"
+  />
+  <br>
   <reset-button />
 </template>
 
@@ -17,6 +25,10 @@ type GroupedByUsers = {
   [key: number]: Fingers | undefined;
 };
 export default defineComponent({
+  components: {
+    UserInfo,
+    ResetButton,
+  },
   mounted() {
     this.chart = new ApexCharts(
       document.querySelector("#chart"),
@@ -24,10 +36,6 @@ export default defineComponent({
     );
     // vue-apexcharts does not support Vue 3.0 yet.
     this.chart.render();
-  },
-  components: {
-    UserInfo,
-    ResetButton,
   },
   props: {
     fingers: {
@@ -76,7 +84,7 @@ export default defineComponent({
           categories: [1, 2, 3, 4, 5],
         },
         tooltip: {
-          custom: function ({ dataPointIndex }: ApexDiscretePoint) {
+          custom: function ({ dataPointIndex }) {
             const index = dataPointIndex ?? 0;
             return (
               '<div class="arrow_box p-1">' +

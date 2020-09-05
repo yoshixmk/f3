@@ -1,8 +1,18 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <img src="/images/finger5.png" class="bg-white" width="30" height="30" alt="" loading="lazy">
+      <a
+        class="navbar-brand"
+        href="/"
+      >
+        <img
+          src="/images/finger5.png"
+          class="bg-white"
+          width="30"
+          height="30"
+          alt=""
+          loading="lazy"
+        >
         Fist to Five / <span class="text-info">{{ msg }}</span>
       </a>
       <button
@@ -14,13 +24,26 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" />
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div
+        id="navbarSupportedContent"
+        class="collapse navbar-collapse"
+      >
         <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="/" v-if="isFacilitator" class="nav-link active text-right" aria-current="page">Vote</a>
-            <a href="/fff" v-else class="nav-link active text-right" aria-current="page">Facilitator</a>
+            <a
+              v-if="isFacilitator"
+              href="/"
+              class="nav-link active text-right"
+              aria-current="page"
+            >Vote</a>
+            <a
+              v-else
+              href="/fff"
+              class="nav-link active text-right"
+              aria-current="page"
+            >Facilitator</a>
           </li>
         </ul>
       </div>
@@ -34,7 +57,7 @@ export default {
     msg: String,
   },
   computed: {
-    isFacilitator(): Boolean {
+    isFacilitator(): boolean {
       return this.msg === "Facilitator";
     },
   },

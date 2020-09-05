@@ -1,6 +1,16 @@
 <template>
-  <input type="checkbox" v-model="checked" class="m-1" />
-  <button :disabled="!checked" class="btn btn-warning btn-sm m-1" @click="reset()">Reset</button>
+  <input
+    v-model="checked"
+    type="checkbox"
+    class="m-1"
+  >
+  <button
+    :disabled="!checked"
+    class="btn btn-warning btn-sm m-1"
+    @click="reset()"
+  >
+    Reset
+  </button>
 </template>
 
 <script lang="ts">

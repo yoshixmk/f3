@@ -14,38 +14,50 @@
     "dev": "concurrently 'npm:dev:*'",
     "dev:client": "vite",
     "dev:server": "ts-node-dev --respawn src/server/index.ts",
-    "lint": "rome check",
-    "lint-fix": "rome check --apply",
+    "check": "rome check",
+    "check-fix": "rome check --apply",
+    "lint": "eslint 'src/**/*.{m?js,ts,vue}'",
+    "lint-fix": "eslint --fix 'src/**/*.{m?js,ts,vue}'",
     "start": "concurrently 'npm:start:*'",
     "start:client": "vite serve --mode production",
     "start:server": "node dist/server/index.js"
   },
   "dependencies": {
-    "apexcharts": "^3.20.0",
-    "axios": "^0.20.0",
-    "bootstrap": "^5.0.0-alpha1",
-    "cors": "^2.8.5",
-    "popper.js": "^1.16.1",
+    "apexcharts": "3.20.0",
+    "axios": "0.20.0",
+    "bootstrap": "5.0.0-alpha1",
+    "cors": "2.8.5",
+    "popper.js": "1.16.1",
     "vue": "3.0.0-rc.10",
-    "vuex": "^4.0.0-beta.4"
+    "vuex": "4.0.0-beta.4"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.7",
+    "@types/cors": "2.8.7",
     "@types/node": "14.6.4",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.1",
     "@vue/compiler-sfc": "3.0.0-rc.10",
-    "concurrently": "^5.3.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "rimraf": "^3.0.2",
-    "rome": "^10.0.4-beta",
-    "ts-node": "^9.0.0",
+    "concurrently": "5.3.0",
+    "dotenv": "8.2.0",
+    "eslint": "7.8.1",
+    "eslint-plugin-vue": "7.0.0-beta.3",
+    "express": "4.17.1",
+    "rimraf": "3.0.2",
+    "rome": "10.0.4-beta",
+    "ts-node": "9.0.0",
     "ts-node-dev": "1.0.0-pre.62",
-    "typescript": "^4.0.2",
-    "vite": "^1.0.0-rc.4"
+    "typescript": "4.0.2",
+    "vite": "1.0.0-rc.4",
+    "vue-eslint-parser": "7.1.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/yoshixmk/f3"
-  }
+  },
+  "engines": {
+    "node": ">= 14.9.0",
+    "npm": "npm is not supported"
+  },
+  "engineStrict": true
 }
