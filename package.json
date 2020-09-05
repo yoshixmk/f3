@@ -25,7 +25,6 @@
     "axios": "^0.20.0",
     "bootstrap": "^5.0.0-alpha1",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
     "popper.js": "^1.16.1",
     "vue": "3.0.0-rc.10",
     "vuex": "^4.0.0-beta.4"
@@ -35,6 +34,8 @@
     "@types/node": "14.6.4",
     "@vue/compiler-sfc": "3.0.0-rc.10",
     "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "rimraf": "^3.0.2",
     "rome": "^10.0.4-beta",
     "ts-node": "^9.0.0",
