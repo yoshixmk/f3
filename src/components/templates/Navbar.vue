@@ -10,10 +10,11 @@
           class="bg-white"
           width="30"
           height="30"
-          alt=""
+          alt
           loading="lazy"
         >
-        Fist to Five / <span class="text-info">{{ msg }}</span>
+        Fist to Five /
+        <span class="text-info">{{ msg }}</span>
       </a>
       <button
         class="navbar-toggler"
@@ -52,14 +53,19 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      default: "",
+    },
   },
   computed: {
     isFacilitator(): boolean {
       return this.msg === "Facilitator";
     },
   },
-};
+});
 </script>

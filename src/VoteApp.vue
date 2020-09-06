@@ -9,8 +9,10 @@ import axios from "axios";
 import Navbar from "./components/templates/Navbar.vue";
 import Vote from "./components/templates/Vote.vue";
 import UserInfo from "./components/templates/UserInfo.vue";
+import { Fingers } from "./domains/fingers";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   components: {
     Navbar,
     Vote,
@@ -18,7 +20,7 @@ export default {
   },
   data() {
     return {
-      fingers: [],
+      fingers: [] as Fingers,
     };
   },
   mounted() {
@@ -30,8 +32,8 @@ export default {
     updateFingersInfo() {
       axios
         .get(process.env.API_URL + "/v1/fingers")
-        .then((response) => (this.fingers = response.data));
+        .then((response) => (this.fingers = response.data as Fingers));
     },
   },
-};
+});
 </script>

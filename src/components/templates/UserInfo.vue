@@ -18,6 +18,7 @@ export default defineComponent({
   props: {
     fingers: {
       type: Object as PropType<Fingers | undefined>,
+      default: [],
     },
   },
 });
