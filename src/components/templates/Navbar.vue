@@ -1,32 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <img
-          src="/images/finger5.png"
-          class="bg-white"
-          width="30"
-          height="30"
-          alt
-          loading="lazy"
-        >
-        Fist to Five /
-        <span class="text-info">{{ msg }}</span>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <brand :msg="msg" />
+      <navbar-toggler>
         <span class="navbar-toggler-icon" />
-      </button>
+      </navbar-toggler>
       <div
         id="navbarSupportedContent"
         class="collapse navbar-collapse"
@@ -54,8 +32,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Brand from "../organism/Brand.vue"
+import NavbarToggler from "../organism/NavbarToggler.vue";
 
 export default defineComponent({
+  components: {
+    Brand,
+    NavbarToggler,
+  },
   props: {
     msg: {
       type: String,
