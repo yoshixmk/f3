@@ -32,8 +32,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Brand from "../organism/Brand.vue"
-import NavbarToggler from "../organism/NavbarToggler.vue";
+import Brand from "../molecules/Brand.vue"
+import NavbarToggler from "../molecules/NavbarToggler.vue";
 
 export default defineComponent({
   components: {

@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import UserInfo from "./UserInfo.vue";
-import ResultBarChart from "../organism/ResultBarChart.vue";
-import ResetButton from "../organism/ResetButton.vue";
+import ResultBarChart from "../molecules/ResultBarChart.vue";
+import ResetButton from "../molecules/ResetButton.vue";
 import { Fingers } from "../../domains/fingers";
 import { defineComponent, PropType } from "vue";
 

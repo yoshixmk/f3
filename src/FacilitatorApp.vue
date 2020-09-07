@@ -1,38 +1,14 @@
 <template>
-  <Navbar msg="Facilitator" />
-  <Vote />
-  <Facilitator :fingers="fingers" />
+  <FacilitatorTemplate />
 </template>
 
 <script lang="ts">
-import axios from "axios";
-import Navbar from "./components/templates/Navbar.vue";
-import Vote from "./components/templates/Vote.vue";
-import Facilitator from "./components/templates/Facilitator.vue";
+import FacilitatorTemplate from "./components/templates/FacilitatorTemplate.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   components: {
-    Navbar,
-    Vote,
-    Facilitator,
-  },
-  data() {
-    return {
-      fingers: [],
-    };
-  },
-  mounted() {
-    setInterval(() => {
-      this.updateFingersInfo();
-    }, 1000);
-  },
-  methods: {
-    updateFingersInfo() {
-      axios
-        .get(process.env.API_URL + "/v1/fingers")
-        .then((response) => (this.fingers = response.data));
-    },
+    FacilitatorTemplate,
   },
 });
 </script>

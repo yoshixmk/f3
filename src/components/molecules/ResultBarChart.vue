@@ -49,7 +49,8 @@ export default defineComponent({
     getUsersGroupBy(): GroupedByUsers {
       const result = this.fingers?.reduce(
         (h, obj) =>
-          Object.assign(h, { [obj.value]: (h[obj.value] || []).concat(obj) }),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          Object.assign(h, { [obj.value]: ((h as any)[obj.value] || []).concat(obj) }),
         {}
       );
       console.log(result);
