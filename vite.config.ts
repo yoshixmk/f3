@@ -3,13 +3,8 @@ export default {
 		"/v1": {
 			target: "http://localhost:5000",
 			changeOrigin: true,
-			rewrite: (path) => path.replace(/^\/v1/, ""),
-		},
-		// bug??
-		"/undefined/v1": {
-			target: "http://localhost:5000",
-			changeOrigin: true,
-			rewrite: (path) => path.replace(/^\/undefined\/v1/, ""),
+			// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+			rewrite: (path: string) => path.replace(/^\/v1/, ""),
 		},
 	},
 };

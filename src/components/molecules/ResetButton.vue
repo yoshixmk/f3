@@ -26,7 +26,7 @@ export default defineComponent({
   methods: {
     reset() {
       if (this.checked) {
-        axios.delete(process.env.API_URL + "/v1/reset");
+        axios.delete(process.env.API_URL || '' + "/v1/reset");
       }
     },
   },
