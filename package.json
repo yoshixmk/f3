@@ -23,7 +23,7 @@
     "start:server": "node dist/server/index.js"
   },
   "dependencies": {
-    "apexcharts": "3.20.0",
+    "apexcharts": "3.20.1",
     "axios": "0.20.0",
     "bootstrap": "5.0.0-alpha1",
     "cors": "2.8.5",
