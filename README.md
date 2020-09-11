@@ -43,3 +43,6 @@ $ yarn lint-fix
 
 ## [What is Fist to Five?](https://www.lucidmeetings.com/glossary/fist-five)
 > The Fist to Five is a technique for quickly getting feedback or gauging consensus during a meeting. The leader makes a statement, then asks everyone to show their level of agreement with the statement by holding up a number of fingers, from 5 for wild enthusiasm (Jazz hands!) down to a clenched fist for vehement opposition.
+
+## Reference products
+- [yuneco / vite-kingyo](https://github.com/yuneco/vite-kingyo)

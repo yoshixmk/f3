@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark TopLayer">
     <div class="container-fluid">
       <brand :msg="msg" />
       <navbar-toggler>
@@ -53,3 +53,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped lang="scss">
+.TopLayer {
+  z-index: 1
+}
+</style>
