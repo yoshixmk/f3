@@ -1,12 +1,12 @@
-import { onMounted, reactive, onUnmounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 
 type MouseClickHandler = () => void;
 
 export const useClick = (
   handler: MouseClickHandler,
   targetDom?: HTMLElement
-) => {
-  const onMouseClick = (ev: PointerEvent): void => {
+): void => {
+  const onMouseClick = (): void => {
     handler?.();
   };
 
@@ -18,6 +18,4 @@ export const useClick = (
     const target = targetDom ?? document.body;
     target.removeEventListener("click", onMouseClick);
   });
-
-  return {};
 };

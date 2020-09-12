@@ -17,6 +17,7 @@ export default defineComponent({
     x: { type: Number, default: 0 },
     y: { type: Number, default: 0 },
   },
+  emits: {'end': null},
   setup(_, ctx) {
     onMounted(() => {
       window.setTimeout(() => {

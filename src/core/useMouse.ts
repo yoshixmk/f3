@@ -1,6 +1,13 @@
 import { onMounted, reactive, onUnmounted } from "vue";
 
-export const useMouse = (targetDom?: HTMLElement) => {
+type MousePos = {
+  mousePos: {
+    x: number;
+    y: number;
+  }
+}
+
+export const useMouse = (targetDom?: HTMLElement): MousePos => {
   const mousePos = reactive({
     x: 0,
     y: 0,

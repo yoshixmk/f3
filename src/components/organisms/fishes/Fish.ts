@@ -12,11 +12,10 @@ type Props = {
 };
 
 export const Fish = (props: Props): VNode => {
-  const scale = props.scale || 1;
-  const style = `color: ${props.color};transform: translate(${props.x}px, ${
-    props.y
-    }px) rotate(${props.angle}deg) scale(${scale}, ${
-    scale * 0.8
+  const { x, y, angle, color, scale } = props;
+  const fixedScale = scale || 1;
+  const style = `color: ${color};transform: translate(${x}px, ${y
+    }px) rotate(${angle}deg) scale(${fixedScale}, ${fixedScale * 0.8
     }) rotate(${-45}deg);`;
   return h("div", { class: "FishRoot", style });
 };

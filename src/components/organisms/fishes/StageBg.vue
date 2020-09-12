@@ -3,9 +3,9 @@
   <div class="StageBgRoot">
     <transition-group name="list">
       <div
-        class="Stone"
         v-for="stone in stones"
         :key="stone.id"
+        class="Stone"
         :style="{
           left: `calc(${stone.x * 100}% - ${stone.size / 2}px)`,
           top: `calc(${stone.y * 100}% - ${stone.size / 2}px)`,
@@ -54,7 +54,7 @@ const MAX_STONE = 50;
 
 export default defineComponent({
   name: "StageBg",
-  setup(_, ctx) {
+  setup() {
     const stones = ref<StoneModel[]>([]);
 
     const addStone = () => {

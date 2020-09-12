@@ -31,7 +31,7 @@ type LayerState = {
 export default defineComponent({
   name: "WaveLayer",
   components: { Wave },
-  setup(_, _ctx) {
+  setup() {
     // state: レイヤーの状態
     const stageState = reactive<LayerState>({
       waveList: [],

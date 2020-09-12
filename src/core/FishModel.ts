@@ -34,7 +34,7 @@ export class FishModel {
   scale = randomScale();
   insensitiveTerms = 0;
 
-  update(destPoint: Point) {
+  update(destPoint: Point): void {
     const MAX_SPEED = 3;
     this.force = this.force * (1 - FORCE_DECREMENT_RATE) + DEFAULT_FORCE * FORCE_DECREMENT_RATE
     if (this.insensitiveTerms <= 0) {
@@ -53,7 +53,7 @@ export class FishModel {
     this.position = this.position.add(this.vector);
   }
 
-  setForce(value: number) {
+  setForce(value: number): void {
     this.force = value;
   }
 }
