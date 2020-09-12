@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { useTicker } from "../../../core/useTicker";
+import { useTicker } from "../../../domains/fish/useTicker";
 
 type StoneModel = {
   id: number;

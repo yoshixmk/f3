@@ -10,7 +10,7 @@ import axios from "axios";
 import Navbar from "../organisms/Navbar.vue";
 import Vote from "../organisms/Vote.vue";
 import UserInfo from "../organisms/UserInfo.vue";
-import FishStage from "../organisms/fishes/FishStage.vue";
+import FishStage from "../organisms/fish/FishStage.vue";
 import { Fingers } from "../../domains/fingers";
 import { defineComponent } from "vue";
 

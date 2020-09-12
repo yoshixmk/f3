@@ -12,7 +12,7 @@ import axios from "axios";
 import Navbar from "../organisms/Navbar.vue";
 import Vote from "../organisms/Vote.vue";
 import Facilitator from "../organisms/Facilitator.vue";
-import FishStage from "../organisms/fishes/FishStage.vue";
+import FishStage from "../organisms/fish/FishStage.vue";
 import TopLayerPanel from "../organisms/TopLayerPanel.vue";
 import { Fingers } from "../../domains/fingers";
 import { defineComponent } from "vue";

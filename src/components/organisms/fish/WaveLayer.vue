@@ -15,11 +15,11 @@
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
 import Wave from "./Wave.vue";
-import { Point } from "../../../core/Point";
-import { useMouse } from "../../../core/useMouse";
-import { useClick } from "../../../core/useClick";
-import { useTicker } from "../../../core/useTicker";
-import { WaveModel } from "../../../core/WaveModel";
+import { Point } from "../../../domains/fish/Point";
+import { useMouse } from "../../../domains/fish/useMouse";
+import { useClick } from "../../../domains/fish/useClick";
+import { useTicker } from "../../../domains/fish/useTicker";
+import { WaveModel } from "../../../domains/fish/WaveModel";
 
 /**
  * 波紋の状態を管理する型

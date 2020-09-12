@@ -17,11 +17,11 @@
 <script lang="ts">
 import { defineComponent, reactive, computed } from "vue";
 import { Fish } from "./Fish";
-import { Point } from "../../../core/Point";
-import { useMouse } from "../../../core/useMouse";
-import { useClick } from "../../../core/useClick";
-import { useAnimationFrame } from "../../../core/useAnimationFrame";
-import { FishModel } from "../../../core/FishModel";
+import { Point } from "../../../domains/fish/Point";
+import { useMouse } from "../../../domains/fish/useMouse";
+import { useClick } from "../../../domains/fish/useClick";
+import { useAnimationFrame } from "../../../domains/fish/useAnimationFrame";
+import { FishModel } from "../../../domains/fish/FishModel";
 
 /**
  * 金魚レイヤーの状態を管理する型
