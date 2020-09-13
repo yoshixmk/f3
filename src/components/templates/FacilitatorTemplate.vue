@@ -1,7 +1,10 @@
 <template>
-  <navbar msg="Facilitator" />
-  <vote />
-  <facilitator :fingers="fingers" />
+  <top-layer-panel>
+    <navbar msg="Facilitator" />
+    <vote />
+    <facilitator :fingers="fingers" />
+  </top-layer-panel>
+  <fish-stage />
 </template>
 
 <script lang="ts">
@@ -9,6 +12,9 @@ import axios from "axios";
 import Navbar from "../organisms/Navbar.vue";
 import Vote from "../organisms/Vote.vue";
 import Facilitator from "../organisms/Facilitator.vue";
+import FishStage from "../organisms/fish/FishStage.vue";
+import TopLayerPanel from "../organisms/TopLayerPanel.vue";
+import { Fingers } from "../../domains/fingers";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -16,10 +22,12 @@ export default defineComponent({
     Navbar,
     Vote,
     Facilitator,
+    FishStage,
+    TopLayerPanel,
   },
   data() {
     return {
-      fingers: [],
+      fingers: [] as Fingers,
     };
   },
   mounted() {
@@ -36,3 +44,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped lang="scss">
+.TopLayer {
+  z-index: 1
+}
+</style>

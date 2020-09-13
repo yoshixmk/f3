@@ -14,14 +14,14 @@
     <div class="row container-sm">
       <div class="col-0 col-lg-3" />
       <input
-        class="col-7 col-lg-4 m-1"
+        class="col-7 col-lg-4 m-1 TopLayer"
         :value="state.name"
         autofocus
         placeholder="Your name"
         @input="updateName($event.target.value)"
       >
       <button
-        class="btn btn-outline-secondary col-2 col-lg-1 m-1"
+        class="btn btn-outline-secondary col-2 col-lg-1 m-1 TopLayer"
         @click="countUp()"
         @keyup.right="countUp()"
         @keyup.up="countUp()"
@@ -37,7 +37,7 @@
         Vote: {{ fingerNumber() }}
       </button>
       <button
-        class="btn btn-outline-primary col-2 col-lg-1 m-1"
+        class="btn btn-outline-primary col-2 col-lg-1 m-1 TopLayer"
         :disabled="hasNotName()"
         @click="sendVote"
       >
@@ -98,3 +98,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped lang="scss">
+.TopLayer {
+  z-index: 1
+}
+</style>

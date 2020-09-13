@@ -2,6 +2,7 @@
   <navbar msg="Vote" />
   <vote />
   <user-info :fingers="fingers" />
+  <fish-stage />
 </template>
 
 <script lang="ts">
@@ -9,6 +10,7 @@ import axios from "axios";
 import Navbar from "../organisms/Navbar.vue";
 import Vote from "../organisms/Vote.vue";
 import UserInfo from "../organisms/UserInfo.vue";
+import FishStage from "../organisms/fish/FishStage.vue";
 import { Fingers } from "../../domains/fingers";
 import { defineComponent } from "vue";
 
@@ -17,6 +19,7 @@ export default defineComponent({
     Navbar,
     Vote,
     UserInfo,
+    FishStage,
   },
   data() {
     return {

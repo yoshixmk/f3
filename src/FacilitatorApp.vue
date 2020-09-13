@@ -1,5 +1,5 @@
 <template>
-  <FacilitatorTemplate />
+  <facilitator-template />
 </template>
 
 <script lang="ts">
