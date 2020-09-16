@@ -6,6 +6,7 @@ import FacilitatorApp from "./FacilitatorApp.vue";
 import "popper.js";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {axiosPlugin} from "./plugins/useAxios";
 
 const NotFoundComponent = {template: "<p>Page not found</p>"};
 
@@ -30,4 +31,4 @@ export const router = {
 	},
 };
 
-createApp(router).use(store).mount("#app");
+createApp(router).use(store).use(axiosPlugin).mount("#app");
