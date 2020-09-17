@@ -11,18 +11,18 @@
       >
         <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a
+            <nav-link
               v-if="isFacilitator"
               href="/"
-              class="nav-link active text-right"
-              aria-current="page"
-            >Vote</a>
-            <a
+            >
+              Vote
+            </nav-link>
+            <nav-link
               v-else
               href="/fff"
-              class="nav-link active text-right"
-              aria-current="page"
-            >Facilitator</a>
+            >
+              Facilitator
+            </nav-link>
           </li>
         </ul>
       </div>
@@ -31,14 +31,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import Brand from "../molecules/Brand.vue"
 import NavbarToggler from "../molecules/NavbarToggler.vue";
+import NavLink from "../atoms/NavLink.vue"
 
 export default defineComponent({
   components: {
     Brand,
     NavbarToggler,
+		NavLink,
   },
   props: {
     msg: {
@@ -46,11 +48,12 @@ export default defineComponent({
       default: "",
     },
   },
-  computed: {
-    isFacilitator(): boolean {
-      return this.msg === "Facilitator";
-    },
-  },
+	setup(props) {
+		const isFacilitator = computed(() => props.msg === "Facilitator")
+		return {
+			isFacilitator
+		}
+	},
 });
 </script>
 
