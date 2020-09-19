@@ -1,7 +1,7 @@
 <template>
   <a
     :href="href"
-    class="nav-link active text-right"
+    class="nav-link active"
     aria-current="page"
   >
     <slot />

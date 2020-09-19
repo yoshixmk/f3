@@ -14,12 +14,14 @@
             <nav-link
               v-if="isFacilitator"
               href="/"
+              class="text-right"
             >
               Vote
             </nav-link>
             <nav-link
               v-else
               href="/fff"
+              class="text-right"
             >
               Facilitator
             </nav-link>
