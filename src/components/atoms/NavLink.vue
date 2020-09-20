@@ -12,11 +12,11 @@
 import {defineComponent} from "vue"
 export default defineComponent({
 name: "NavLink",
-	props: {
-		href: {
-			type: String,
-			required: true
-		}
-	}
+  props: {
+    href: {
+      type: String,
+      required: true
+    }
+  }
 })
 </script>

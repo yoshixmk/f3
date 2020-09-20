@@ -42,7 +42,7 @@ export default defineComponent({
   components: {
     Brand,
     NavbarToggler,
-		NavLink,
+    NavLink,
   },
   props: {
     msg: {
@@ -50,12 +50,12 @@ export default defineComponent({
       default: "",
     },
   },
-	setup(props) {
-		const isFacilitator = computed(() => props.msg === "Facilitator")
-		return {
-			isFacilitator
-		}
-	},
+  setup(props) {
+    const isFacilitator = computed(() => props.msg === "Facilitator")
+    return {
+      isFacilitator
+    }
+  },
 });
 </script>
 
