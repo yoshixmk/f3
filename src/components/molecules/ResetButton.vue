@@ -18,18 +18,18 @@ import { defineComponent, ref } from "vue";
 import {useAxios} from "../../plugins/useAxios";
 
 export default defineComponent({
-	setup() {
-		const axios = useAxios()
-		const checked = ref<boolean>(false)
-		const reset = async () => {
-			if (checked.value) {
-				await axios.delete("/v1/reset")
-			}
-		}
-		return {
-			checked,
-			reset
-		}
-	},
+  setup() {
+    const axios = useAxios()
+    const checked = ref<boolean>(false)
+    const reset = async () => {
+      if (checked.value) {
+        await axios.delete("/v1/reset")
+      }
+    }
+    return {
+      checked,
+      reset
+    }
+  },
 });
 </script>
