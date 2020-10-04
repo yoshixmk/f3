@@ -20,6 +20,8 @@ type GroupedByUsers = {
   [key: number]: Fingers | undefined;
 };
 
+// Waiting for upgrading vue-apexcharts
+// @see https://github.com/apexcharts/vue-apexcharts/issues/221
 export default defineComponent({
   props: {
     fingers: {
