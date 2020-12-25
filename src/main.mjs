@@ -7,6 +7,7 @@ import "@popperjs/core";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { axiosPlugin } from "./plugins/useAxios";
+import VueApexCharts from "vue3-apexcharts";
 
 const NotFoundComponent = { template: "<p>Page not found</p>" };
 
@@ -31,4 +32,8 @@ export const router = {
   },
 };
 
-createApp(router).use(store).use(axiosPlugin).mount("#app");
+createApp(router)
+  .use(store)
+  .use(axiosPlugin)
+  .use(VueApexCharts)
+  .mount("#app");
