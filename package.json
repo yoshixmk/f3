@@ -1,6 +1,6 @@
 {
   "name": "f3",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
   "description": "Facilitating conversations using Fist to Five.",
   "author": "yoshixmk",
@@ -57,7 +57,7 @@
     "url": "https://github.com/yoshixmk/f3"
   },
   "engines": {
-    "node": ">= 14.15.0",
+    "node": ">= 14.10.0",
     "npm": "npm is not supported"
   },
   "engineStrict": true
