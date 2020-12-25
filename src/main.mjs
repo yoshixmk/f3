@@ -3,7 +3,7 @@ import store from "./store";
 
 import VoteApp from "./VoteApp.vue";
 import FacilitatorApp from "./FacilitatorApp.vue";
-import "popper.js";
+import "@popperjs/core";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { axiosPlugin } from "./plugins/useAxios";
