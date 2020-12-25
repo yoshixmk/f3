@@ -5,6 +5,7 @@ COPY . /app
 
 RUN yarn install
 RUN yarn build
+RUN yarn build:server
 
 # backend port
 ENV PORT=5000
