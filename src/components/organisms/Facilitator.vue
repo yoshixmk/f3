@@ -5,12 +5,13 @@
     type="bar"
     :options="options"
     :series="series"
-    :tooltip="tooltip"
   />
+  <reset-button />
 </template>
 
 <script lang="ts">
 import UserInfo from "./UserInfo.vue";
+import ResetButton from "../molecules/ResetButton.vue";
 import { Fingers } from "../../domains/fingers";
 import { defineComponent, PropType } from "vue";
 
@@ -21,6 +22,7 @@ type GroupedByUsers = {
 export default defineComponent({
   components: {
     UserInfo,
+    ResetButton,
   },
   props: {
     fingers: {
@@ -57,20 +59,6 @@ export default defineComponent({
           },
         ]
     },
-    tooltip() {
-        const data: GroupedByUsers = this.getUsersGroupBy();
-        return {
-          custom: function ({ dataPointIndex }: { dataPointIndex: number }) {
-            const index = dataPointIndex ?? 0;
-            return (
-              '<div class="arrow_box p-1">' +
-                "<span>" +
-                data[index + 1]?.map((d) => d.name)?.join("<br>") ??
-              "" + "</span>" + "</div>"
-            );
-          }
-        }
-      },
   },
   methods: {
     getUsersGroupBy(): GroupedByUsers {
@@ -80,7 +68,6 @@ export default defineComponent({
           Object.assign(h, { [obj.value]: ((h as any)[obj.value] || []).concat(obj) }),
         {}
       );
-      console.log(result);
       return result;
     },
   }
