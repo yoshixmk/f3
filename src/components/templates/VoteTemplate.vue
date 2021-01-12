@@ -34,8 +34,8 @@ export default defineComponent({
   methods: {
     updateFingersInfo() {
       axios
-        .get(process.env.API_URL || '' + "/v1/fingers")
-        .then((response) => (this.fingers = response.data as Fingers));
+        .get<Fingers>(process.env.API_URL || '' + "/v1/fingers")
+        .then((response) => (this.fingers = response.data));
     },
   },
 });
