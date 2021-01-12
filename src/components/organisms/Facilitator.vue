@@ -1,5 +1,8 @@
 <template>
-  <user-info :fingers="fingers" />
+  <user-info
+    :fingers="fingers"
+    :enable-hover="true"
+  />
   <apexchart
     height="350"
     type="bar"

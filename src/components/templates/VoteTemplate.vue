@@ -1,7 +1,10 @@
 <template>
   <navbar msg="Vote" />
   <vote />
-  <user-info :fingers="fingers" />
+  <user-info
+    :fingers="fingers"
+    :enable-hover="false"
+  />
   <fish-stage />
 </template>
 
