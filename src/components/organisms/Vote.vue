@@ -45,33 +45,43 @@
       </button>
       <div class="col-0 col-lg-1" />
     </div>
+    <div class="d-flex justify-content-end fixed-top">
+      <Toast
+        :class="{show: react.sent}"
+      >
+        Success sending.<br> You can overwrite using the same name again.
+      </Toast>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
+import Toast from "../molecules/Toast.vue";
 import axios from "axios";
-import { defineComponent } from "vue";
+import { defineComponent, reactive } from "vue";
 import { useStore } from "vuex";
 import { State } from "../../store";
 
 export default defineComponent({
+  components: { Toast },
   setup() {
     const { state, dispatch } = useStore<State>();
 
     const fingerNumber = () => {
       return (state.count % 5) + 1;
     };
+    const react = reactive({ sent: false })
     const sendVote = () => {
       axios
         .post(process.env.API_URL || '' + "/v1/fingers", {
           name: state.name,
           value: fingerNumber(),
         })
-        .then((response) => console.info(response.data));
+      react.sent = true;
+      setTimeout(() => react.sent = false, 2000);
     };
     const initCount = (num: number) => {
       dispatch("onSetCount", num - 1);
-      console.log(state.count);
     };
     const countUp = () => {
       dispatch("onIncrement");
@@ -94,6 +104,7 @@ export default defineComponent({
       countDown,
       updateName,
       hasNotName,
+      react,
     };
   },
 });
