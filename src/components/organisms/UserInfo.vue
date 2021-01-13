@@ -4,8 +4,14 @@
       v-for="(finger, i) in fingers"
       :key="{i}"
       class="badge rounded-pill bg-light text-dark ml-1 font-weight-normal"
+      role="button"
+      @mouseover="isHover=true"
+      @mouseleave="isHover=false"
     >{{ finger.name }}
-      <span style="color: deeppink;">{{ finger.value }}</span>
+      <span
+        v-if="enableHover && isHover"
+        style="color: deeppink;"
+      >{{ finger.value }}</span>
     </span>
     <br>
     {{ fingers.length }} voted users
@@ -22,6 +28,13 @@ export default defineComponent({
       type: Object as PropType<Fingers | undefined>,
       default: [],
     },
+    enableHover: {
+      type: Boolean,
+      default: false
+    },
   },
+  data() {
+    return { isHover: false }
+  }
 });
 </script>
