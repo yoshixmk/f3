@@ -45,7 +45,7 @@
       </button>
       <div class="col-0 col-lg-1" />
     </div>
-    <div class="d-flex justify-content-end fixed-top">
+    <div class="d-flex justify-content-end fixed-bottom">
       <Toast
         :class="{show: react.sent}"
       >
