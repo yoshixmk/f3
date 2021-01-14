@@ -46,7 +46,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.TopLayer {
+.top-layer {
   z-index: 1
 }
 </style>

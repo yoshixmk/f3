@@ -1,11 +1,11 @@
 <template>
-  <div class="TopLayer">
+  <div class="top-layer">
     <slot />
   </div>
 </template>
 
 <style scoped lang="scss">
-.TopLayer {
+.top-layer {
   z-index: 1
 }
 </style>

@@ -14,30 +14,30 @@
     <div class="row container-sm">
       <div class="col-0 col-lg-3" />
       <input
-        class="col-7 col-lg-4 m-1 TopLayer"
+        class="col-7 col-lg-4 m-1 top-layer"
         :value="state.name"
         autofocus
         placeholder="Your name"
         @input="updateName($event.target.value)"
       >
       <button
-        class="btn btn-outline-secondary col-2 col-lg-1 m-1 TopLayer"
+        class="btn btn-outline-secondary col-2 col-lg-1 m-1 top-layer"
         @click="countUp()"
         @keyup.right="countUp()"
         @keyup.up="countUp()"
         @keyup.left="countDown()"
         @keyup.down="countDown()"
-        @keyup.1="initCount(1)"
-        @keyup.2="initCount(2)"
-        @keyup.3="initCount(3)"
-        @keyup.4="initCount(4)"
-        @keyup.5="initCount(5)"
-        @keyup.0="initCount(0)"
+        @keyup.ctrl.0="initCount(0)"
+        @keyup.ctrl.1="initCount(1)"
+        @keyup.ctrl.2="initCount(2)"
+        @keyup.ctrl.3="initCount(3)"
+        @keyup.ctrl.4="initCount(4)"
+        @keyup.ctrl.5="initCount(5)"
       >
         Vote: {{ fingerNumber() }}
       </button>
       <button
-        class="btn btn-outline-primary col-2 col-lg-1 m-1 TopLayer"
+        class="btn btn-outline-primary col-2 col-lg-1 m-1 top-layer"
         :disabled="hasNotName()"
         @click="sendVote"
       >
@@ -45,13 +45,16 @@
       </button>
       <div class="col-0 col-lg-1" />
     </div>
-    <div class="d-flex justify-content-end fixed-bottom">
-      <Toast
-        :class="{show: react.sent}"
+    <transition name="fade">
+      <div
+        v-if="react.sent"
+        class="d-flex justify-content-end fixed-bottom"
       >
-        Success sending.<br> You can overwrite using the same name again.
-      </Toast>
-    </div>
+        <Toast>
+          Success sending.<br> You can overwrite using the same name again.
+        </Toast>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -78,7 +81,7 @@ export default defineComponent({
           value: fingerNumber(),
         })
       react.sent = true;
-      setTimeout(() => react.sent = false, 2000);
+      setTimeout(() => react.sent = false, 3000);
     };
     const initCount = (num: number) => {
       dispatch("onSetCount", num - 1);
@@ -111,7 +114,13 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.TopLayer {
+.top-layer {
   z-index: 1
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>
