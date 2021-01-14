@@ -21,7 +21,7 @@
         @input="updateName($event.target.value)"
       >
       <button
-        class="btn btn-outline-secondary col-2 col-lg-1 m-1 TopLayer"
+        class="btn btn-outline-secondary col-2 col-lg-1 m-1 top-layer"
         @click="countUp()"
         @keyup.right="countUp()"
         @keyup.up="countUp()"
@@ -37,7 +37,7 @@
         Vote: {{ fingerNumber() }}
       </button>
       <button
-        class="btn btn-outline-primary col-2 col-lg-1 m-1 TopLayer"
+        class="btn btn-outline-primary col-2 col-lg-1 m-1 top-layer"
         :disabled="hasNotName()"
         @click="sendVote"
       >
