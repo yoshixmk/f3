@@ -14,7 +14,7 @@
     <div class="row container-sm">
       <div class="col-0 col-lg-3" />
       <input
-        class="col-7 col-lg-4 m-1 TopLayer"
+        class="col-7 col-lg-4 m-1 top-layer"
         :value="state.name"
         autofocus
         placeholder="Your name"
@@ -45,14 +45,16 @@
       </button>
       <div class="col-0 col-lg-1" />
     </div>
-    <div
-      v-if="react.sent"
-      class="d-flex justify-content-end fixed-bottom"
-    >
-      <Toast>
-        Success sending.<br> You can overwrite using the same name again.
-      </Toast>
-    </div>
+    <transition name="fade">
+      <div
+        v-if="react.sent"
+        class="d-flex justify-content-end fixed-bottom"
+      >
+        <Toast>
+          Success sending.<br> You can overwrite using the same name again.
+        </Toast>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -112,7 +114,13 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.TopLayer {
+.top-layer {
   z-index: 1
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>
