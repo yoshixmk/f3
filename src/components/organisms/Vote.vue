@@ -27,12 +27,12 @@
         @keyup.up="countUp()"
         @keyup.left="countDown()"
         @keyup.down="countDown()"
-        @keyup.1="initCount(1)"
-        @keyup.2="initCount(2)"
-        @keyup.3="initCount(3)"
-        @keyup.4="initCount(4)"
-        @keyup.5="initCount(5)"
-        @keyup.0="initCount(0)"
+        @keyup.ctrl.0="initCount(0)"
+        @keyup.ctrl.1="initCount(1)"
+        @keyup.ctrl.2="initCount(2)"
+        @keyup.ctrl.3="initCount(3)"
+        @keyup.ctrl.4="initCount(4)"
+        @keyup.ctrl.5="initCount(5)"
       >
         Vote: {{ fingerNumber() }}
       </button>
