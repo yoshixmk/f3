@@ -45,10 +45,11 @@
       </button>
       <div class="col-0 col-lg-1" />
     </div>
-    <div class="d-flex justify-content-end fixed-bottom">
-      <Toast
-        :class="{show: react.sent}"
-      >
+    <div
+      v-if="react.sent"
+      class="d-flex justify-content-end fixed-bottom"
+    >
+      <Toast>
         Success sending.<br> You can overwrite using the same name again.
       </Toast>
     </div>
@@ -78,7 +79,7 @@ export default defineComponent({
           value: fingerNumber(),
         })
       react.sent = true;
-      setTimeout(() => react.sent = false, 2000);
+      setTimeout(() => react.sent = false, 3000);
     };
     const initCount = (num: number) => {
       dispatch("onSetCount", num - 1);

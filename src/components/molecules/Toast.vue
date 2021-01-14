@@ -1,6 +1,6 @@
 <template>
   <div
-    class="toast"
+    class="toast show"
     role="alert"
     aria-live="assertive"
     aria-atomic="true"
