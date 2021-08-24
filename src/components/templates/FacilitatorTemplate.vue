@@ -8,14 +8,14 @@
 </template>
 
 <script lang="ts">
-import axios from "axios";
-import Navbar from "../organisms/Navbar.vue";
-import Vote from "../organisms/Vote.vue";
-import Facilitator from "../organisms/Facilitator.vue";
-import FishStage from "../organisms/fish/FishStage.vue";
-import TopLayerPanel from "../organisms/TopLayerPanel.vue";
-import { Fingers } from "../../domains/fingers";
-import { defineComponent } from "vue";
+import axios from 'axios';
+import Navbar from '../organisms/Navbar.vue';
+import Vote from '../organisms/Vote.vue';
+import Facilitator from '../organisms/Facilitator.vue';
+import FishStage from '../organisms/fish/FishStage.vue';
+import TopLayerPanel from '../organisms/TopLayerPanel.vue';
+import { Fingers } from '../../domains/fingers';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   components: {
@@ -38,7 +38,7 @@ export default defineComponent({
   methods: {
     updateFingersInfo() {
       axios
-        .get<Fingers>(process.env.API_URL || '' + "/v1/fingers")
+        .get<Fingers>(import.meta.env.API_URL || '' + '/v1/fingers')
         .then((response) => (this.fingers = response.data));
     },
   },
@@ -47,6 +47,6 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .top-layer {
-  z-index: 1
+  z-index: 1;
 }
 </style>
